@@ -13,16 +13,13 @@
 <body>
     <div class="container h-100">
         <div class="row row-header row-content align-items-center mt-4">
-        <div class="col-3">
-                <H3>ID</H3>
-            </div>
-            <div class="col-3">
+            <div class="col-4">
                 <H3>NAME</H3>
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 <H3>LOCATION</H3>
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 
             </div>
         </div>
@@ -35,19 +32,16 @@
                 while($row=mysqli_fetch_array($result))
                 {
                     echo '<div class="row row-header row-content align-items-center mt-4">
-                            <div class="col-3">'.
-                                $row['Id'].'
-                            </div>
-                            <div class="col-3">'.
+                            <div class="col-4">'.
                                 $row['Name'].'
                             </div>
-                            <div class="col-3">'.
+                            <div class="col-4">'.
                                 $row['Location'].'
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <form action="variable.php" method="get">
                                     <button type="submit" name="edit" value="'.$row['Id'].'" class="btn btn-success mr-4">EDIT</button>
-                                    <button type="submit" name="delete" class="btn btn-danger">DELETE</button>       
+                                    <button type="submit" name="delete" value="'.$row['Id'].'" class="btn btn-danger">DELETE</button>       
                                 </form>
                             </div>
                           </div>';

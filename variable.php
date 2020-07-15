@@ -81,7 +81,25 @@
         }
     }
     
-    
+    //Deleting Data from table
+
+    if(isset($_GET['delete'])){
+        $id=$_GET['delete'];
+        if(!$connection){
+            die("Connection failed: ".mysqli_connect_error());
+        }
+        else{
+        $query= "DELETE FROM `data` WHERE `Id` = {$id} ";                
+        }
+
+        if(mysqli_query($connection,$query)){
+            $_SESSION['display']="display";
+            header("location:index.php");
+        }
+        else{
+            echo "Error";
+        }
+    }
 
     ?>
 </body>
